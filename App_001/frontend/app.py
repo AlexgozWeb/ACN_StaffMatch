@@ -56,7 +56,7 @@ def api(method: str, endpoint: str, **kwargs):
         return requests.request(method, f"{BACKEND_URL}{endpoint}",
                                 headers=headers, timeout=60, **kwargs)
     except requests.exceptions.ConnectionError:
-        st.error("Backend non raggiungibile — assicurati che FastAPI sia in esecuzione su localhost:8000.")
+        st.error(f"Backend non raggiungibile ({BACKEND_URL}).")
         return None
     except Exception as _e:
         st.error(f"Errore chiamata API: {type(_e).__name__}: {_e}")
@@ -271,8 +271,21 @@ def show_risorse(groups):
         with tabs[1]:
             _form_crea_risorsa()
 
+def _api_detail(r, fallback="Nessuna risposta dal backend"):
+    if r is None:
+        return fallback
+    try:
+        return r.json().get("detail", f"HTTP {r.status_code}")
+    except Exception:
+        return f"HTTP {r.status_code}: {r.text[:200]}"
+
 def _form_crea_risorsa():
     import datetime as _dt
+    if st.session_state.pop("cr_last_success", False):
+        st.success("✅ Risorsa creata con successo!")
+    if "cr_last_error" in st.session_state:
+        st.error(f"Errore: {st.session_state.pop('cr_last_error')}")
+
     mansioni_r = api("GET", "/mansioni/")
     skills_r   = api("GET", "/skills/")
     groups_r   = api("GET", "/roles/")
@@ -339,13 +352,20 @@ def _form_crea_risorsa():
             payload["costo_orario"] = costo_v
         r = api("POST", "/resources/", json=payload)
         if r and r.status_code == 201:
-            st.success("✅ Risorsa creata con successo!")
             for k in [k2 for k2 in list(st.session_state.keys()) if k2.startswith("cr_")]:
                 del st.session_state[k]
+            st.session_state["cr_last_success"] = True
             st.rerun()
         else:
-            detail = r.json().get("detail", "Errore") if r else "Nessuna risposta"
-            st.error(f"Errore: {detail}")
+            if r is None:
+                detail = "Nessuna risposta dal backend"
+            else:
+                try:
+                    detail = r.json().get("detail", f"HTTP {r.status_code}")
+                except Exception:
+                    detail = f"HTTP {r.status_code}: {r.text[:200]}"
+            st.session_state["cr_last_error"] = detail
+            st.rerun()
 
 # ── PROGETTI ───────────────────────────────────────────────────────────────────
 def show_progetti(groups):
@@ -411,7 +431,7 @@ def show_progetti(groups):
                                         if pr and pr.status_code == 201:
                                             st.success("Richiesta di rilascio inviata all'Executive.")
                                         else:
-                                            detail = pr.json().get("detail","Errore") if pr else "Errore"
+                                            detail = _api_detail(pr)
                                             st.error(f"Errore: {detail}")
                     else:
                         st.caption("Nessuna risorsa allocata.")
@@ -445,7 +465,7 @@ def show_progetti(groups):
                                         if pr and pr.status_code == 201:
                                             st.success("Richiesta inviata all'Executive!")
                                         else:
-                                            detail = pr.json().get("detail","Errore") if pr else "Errore"
+                                            detail = _api_detail(pr)
                                             st.error(f"Errore: {detail}")
 
                         # modifica info progetto
@@ -466,7 +486,7 @@ def show_progetti(groups):
                                     if pr and pr.status_code == 201:
                                         st.success("Richiesta di modifica inviata all'Executive!")
                                     else:
-                                        detail = pr.json().get("detail","Errore") if pr else "Errore"
+                                        detail = _api_detail(pr)
                                         st.error(f"Errore: {detail}")
 
     if can_write(groups) and len(tabs) > 1:
@@ -512,7 +532,7 @@ def _form_crea_progetto():
             if r and r.status_code == 201:
                 st.success("✅ Progetto creato!")
             else:
-                detail = r.json().get("detail", "Errore") if r else "Nessuna risposta"
+                detail = _api_detail(r)
                 st.error(f"Errore: {detail}")
 
 # ── OPPORTUNITY ────────────────────────────────────────────────────────────────
@@ -598,7 +618,7 @@ def show_opportunity(groups):
                                     st.success("✅ Richiesta inviata!")
                                     st.rerun()
                                 else:
-                                    detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                                    detail = _api_detail(r)
                                     st.error(f"Errore: {detail}")
                         elif stato == "Pending":
                             st.info("⏳ Approvazione in corso")
@@ -624,7 +644,7 @@ def show_opportunity(groups):
                                     st.session_state.pop(f"confirm_del_opp_{o['id']}", None)
                                     st.rerun()
                                 else:
-                                    detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                                    detail = _api_detail(r)
                                     st.error(f"Errore: {detail}")
                         with cc2:
                             if st.button("Annulla", key=f"no_del_{o['id']}"):
@@ -706,7 +726,7 @@ def show_opportunity(groups):
                                     st.session_state.pop(nslots_key, None)
                                     st.rerun()
                                 else:
-                                    detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                                    detail = _api_detail(r)
                                     st.error(f"Errore: {detail}")
                             if cancel:
                                 st.session_state.pop(f"editing_opp_{o['id']}", None)
@@ -792,7 +812,7 @@ def _form_crea_opportunity():
                 del st.session_state[k]
             st.rerun()
         else:
-            detail = r.json().get("detail", "Errore") if r else "Nessuna risposta"
+            detail = _api_detail(r)
             st.error(f"Errore: {detail}")
 
 # ── MATCHING AI ────────────────────────────────────────────────────────────────
@@ -826,7 +846,7 @@ def show_matching(groups):
                     st.success("✅ Matching completato!")
                     st.rerun()
                 else:
-                    detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                    detail = _api_detail(r)
                     st.error(f"Errore: {detail}")
 
     st.markdown("---")
@@ -959,7 +979,7 @@ def show_approvazioni(groups):
                                     st.success("✅ Opportunity promossa a Progetto Attivo!")
                                     st.rerun()
                                 else:
-                                    detail = rv.json().get("detail","Errore") if rv else "Nessuna risposta"
+                                    detail = _api_detail(rv)
                                     st.error(f"Errore: {detail}")
                         with col_no:
                             if st.button("❌ Rifiuta", key=f"rif_{req['id']}"):
@@ -969,7 +989,7 @@ def show_approvazioni(groups):
                                     st.warning("Richiesta rifiutata — Opportunity riportata in stato New.")
                                     st.rerun()
                                 else:
-                                    detail = rv.json().get("detail","Errore") if rv else "Nessuna risposta"
+                                    detail = _api_detail(rv)
                                     st.error(f"Errore: {detail}")
 
     with tab_history:
@@ -1032,7 +1052,7 @@ def show_approvazioni(groups):
                                 st.success("✅ Modifica applicata!")
                                 st.rerun()
                             else:
-                                detail = rv.json().get("detail","Errore") if rv else "Errore"
+                                detail = _api_detail(rv)
                                 st.error(f"Errore: {detail}")
                     with col_no2:
                         if st.button("❌ Rifiuta", key=f"rif_pcr_{req['id']}"):
@@ -1042,7 +1062,7 @@ def show_approvazioni(groups):
                                 st.warning("Richiesta rifiutata.")
                                 st.rerun()
                             else:
-                                detail = rv.json().get("detail","Errore") if rv else "Errore"
+                                detail = _api_detail(rv)
                                 st.error(f"Errore: {detail}")
 
 
@@ -1152,7 +1172,7 @@ def _form_modifica_dipendente():
                 st.success("✅ Dipendente aggiornato!")
                 st.session_state.pop(_sk_key, None)
             else:
-                detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                detail = _api_detail(r)
                 st.error(f"Errore: {detail}")
 
 
@@ -1225,7 +1245,7 @@ def show_admin(groups):
                     st.success("✅ Gruppi aggiornati!")
                     st.session_state.pop("cached_groups", None)
                 else:
-                    detail = r.json().get("detail","Errore") if r else "Nessuna risposta"
+                    detail = _api_detail(r)
                     st.error(f"Errore: {detail}")
 
     with tab_groups:
@@ -1314,7 +1334,7 @@ def show_admin(groups):
                         st.success(f"✅ Skill '{sk_nome}' creata!")
                         st.rerun()
                     else:
-                        detail = r.json().get("detail","Errore") if r else "Errore"
+                        detail = _api_detail(r)
                         st.error(f"Errore: {detail}")
 
     with tab_new_dip:
