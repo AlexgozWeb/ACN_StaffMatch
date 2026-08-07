@@ -1,17 +1,34 @@
 import uuid
 from fastapi import APIRouter, HTTPException, Depends
+from typing import Optional
+from pydantic import BaseModel, EmailStr
 from models.schemas import Risorsa, RisorsaCreate
 from services import auth_service, db
+
+
+class RisorsaUpdate(BaseModel):
+    nome: Optional[str] = None
+    cognome: Optional[str] = None
+    email: Optional[EmailStr] = None
+    data_nascita: Optional[str] = None
+    ruolo_id: Optional[str] = None
+    costo_orario: Optional[float] = None
+    skill_ids: Optional[list] = None
+    lingue: Optional[list[str]] = None
+    gruppo_ruolo_ids: Optional[list[str]] = None
 
 router = APIRouter(prefix="/resources", tags=["Risorse"])
 
 @router.get("/")
-def list_resources(current_user: dict = Depends(auth_service.get_current_user)):
+def list_resources(
+    current_user: dict = Depends(auth_service.get_current_user),
+    include_system: bool = False,
+):
     resources = db.get_resources()
     roles = {r["id"]: r for r in db.get_roles()}
     result = []
     for r in resources:
-        if r["id"] == "R000":
+        if r["id"] == "R000" and not include_system:
             continue
         ruolo = roles.get(r["ruolo_id"], {})
         result.append({
@@ -70,3 +87,21 @@ def create_resource(
     resources.append(new_resource)
     db.save_resources(resources)
     return {**new_resource, "password_hash": "***"}
+
+
+@router.put("/{resource_id}")
+def update_resource(
+    resource_id: str,
+    body: RisorsaUpdate,
+    current_user: dict = Depends(auth_service.is_admin),
+):
+    resources = db.get_resources()
+    r = next((r for r in resources if r["id"] == resource_id), None)
+    if not r:
+        raise HTTPException(status_code=404, detail="Risorsa non trovata")
+    update = body.model_dump(exclude_none=True)
+    if "skill_ids" in update and update["skill_ids"] is not None:
+        update["skill_ids"] = [s if isinstance(s, dict) else s for s in update["skill_ids"]]
+    r.update(update)
+    db.save_resources(resources)
+    return {**r, "password_hash": "***"}

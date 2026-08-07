@@ -1,120 +1,416 @@
 [
   {
-    "id": "R001", "nome": "Mario", "cognome": "Rossi", "email": "mario.rossi@accenture.com",
-    "data_nascita": "1985-03-15", "ruolo_id": "RU008", "costo_orario": 100.0,
+    "id": "R001",
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "email": "mario.rossi@accenture.com",
+    "data_nascita": "1985-03-15",
+    "ruolo_id": "RU008",
+    "costo_orario": 100.0,
     "skill_ids": [
-      {"skill_id": "SK001", "livello": 5}, {"skill_id": "SK002", "livello": 4},
-      {"skill_id": "SK006", "livello": 4}, {"skill_id": "SK011", "livello": 3}
+      {
+        "skill_id": "SK001",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK002",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK006",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK011",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R002", "nome": "Giulia", "cognome": "Bianchi", "email": "giulia.bianchi@accenture.com",
-    "data_nascita": "1990-07-22", "ruolo_id": "RU007", "costo_orario": 75.0,
+    "id": "R002",
+    "nome": "Giulia",
+    "cognome": "Bianchi",
+    "email": "giulia.bianchi@accenture.com",
+    "data_nascita": "1990-07-22",
+    "ruolo_id": "RU007",
+    "costo_orario": 75.0,
     "skill_ids": [
-      {"skill_id": "SK003", "livello": 4}, {"skill_id": "SK004", "livello": 5},
-      {"skill_id": "SK015", "livello": 3}, {"skill_id": "SK016", "livello": 3}
+      {
+        "skill_id": "SK003",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK004",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK015",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK016",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese", "tedesco"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese",
+      "tedesco"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R003", "nome": "Luca", "cognome": "Verdi", "email": "luca.verdi@accenture.com",
-    "data_nascita": "1988-11-05", "ruolo_id": "RU006", "costo_orario": 90.0,
+    "id": "R003",
+    "nome": "Luca",
+    "cognome": "Verdi",
+    "email": "luca.verdi@accenture.com",
+    "data_nascita": "1988-11-05",
+    "ruolo_id": "RU006",
+    "costo_orario": 90.0,
     "skill_ids": [
-      {"skill_id": "SK011", "livello": 5}, {"skill_id": "SK012", "livello": 4},
-      {"skill_id": "SK013", "livello": 4}, {"skill_id": "SK019", "livello": 4}
+      {
+        "skill_id": "SK011",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK012",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK013",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK019",
+        "livello": 4
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R004", "nome": "Sara", "cognome": "Ferrari", "email": "sara.ferrari@accenture.com",
-    "data_nascita": "1992-04-18", "ruolo_id": "RU003", "costo_orario": 85.0,
+    "id": "R004",
+    "nome": "Sara",
+    "cognome": "Ferrari",
+    "email": "sara.ferrari@accenture.com",
+    "data_nascita": "1992-04-18",
+    "ruolo_id": "RU003",
+    "costo_orario": 85.0,
     "skill_ids": [
-      {"skill_id": "SK001", "livello": 4}, {"skill_id": "SK007", "livello": 5},
-      {"skill_id": "SK008", "livello": 3}, {"skill_id": "SK018", "livello": 3}
+      {
+        "skill_id": "SK001",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK007",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK008",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK018",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese", "francese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese",
+      "francese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R005", "nome": "Andrea", "cognome": "Colombo", "email": "andrea.colombo@accenture.com",
-    "data_nascita": "1983-09-30", "ruolo_id": "RU011", "costo_orario": 160.0,
+    "id": "R005",
+    "nome": "Andrea",
+    "cognome": "Colombo",
+    "email": "andrea.colombo@accenture.com",
+    "data_nascita": "1983-09-30",
+    "ruolo_id": "RU011",
+    "costo_orario": 160.0,
     "skill_ids": [
-      {"skill_id": "SK006", "livello": 5}, {"skill_id": "SK001", "livello": 4},
-      {"skill_id": "SK002", "livello": 4}, {"skill_id": "SK013", "livello": 3}
+      {
+        "skill_id": "SK006",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK001",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK002",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK013",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR002"]
+    "gruppo_ruolo_ids": [
+      "GR002"
+    ]
   },
   {
-    "id": "R006", "nome": "Francesca", "cognome": "Ricci", "email": "francesca.ricci@accenture.com",
-    "data_nascita": "1991-01-12", "ruolo_id": "RU005", "costo_orario": 70.0,
+    "id": "R006",
+    "nome": "Francesca",
+    "cognome": "Ricci",
+    "email": "francesca.ricci@accenture.com",
+    "data_nascita": "1991-01-12",
+    "ruolo_id": "RU005",
+    "costo_orario": 70.0,
     "skill_ids": [
-      {"skill_id": "SK011", "livello": 4}, {"skill_id": "SK015", "livello": 5},
-      {"skill_id": "SK016", "livello": 4}, {"skill_id": "SK020", "livello": 3}
+      {
+        "skill_id": "SK011",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK015",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK016",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK020",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R007", "nome": "Marco", "cognome": "Esposito", "email": "marco.esposito@accenture.com",
-    "data_nascita": "1987-06-25", "ruolo_id": "RU009", "costo_orario": 110.0,
+    "id": "R007",
+    "nome": "Marco",
+    "cognome": "Esposito",
+    "email": "marco.esposito@accenture.com",
+    "data_nascita": "1987-06-25",
+    "ruolo_id": "RU009",
+    "costo_orario": 110.0,
     "skill_ids": [
-      {"skill_id": "SK003", "livello": 5}, {"skill_id": "SK004", "livello": 4},
-      {"skill_id": "SK005", "livello": 3}, {"skill_id": "SK011", "livello": 4}
+      {
+        "skill_id": "SK003",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK004",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK005",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK011",
+        "livello": 4
+      }
     ],
-    "lingue": ["italiano", "inglese", "spagnolo"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese",
+      "spagnolo"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R008", "nome": "Elena", "cognome": "Marino", "email": "elena.marino@accenture.com",
-    "data_nascita": "1994-02-08", "ruolo_id": "RU002", "costo_orario": 65.0,
+    "id": "R008",
+    "nome": "Elena",
+    "cognome": "Marino",
+    "email": "elena.marino@accenture.com",
+    "data_nascita": "1994-02-08",
+    "ruolo_id": "RU002",
+    "costo_orario": 65.0,
     "skill_ids": [
-      {"skill_id": "SK012", "livello": 4}, {"skill_id": "SK014", "livello": 3},
-      {"skill_id": "SK013", "livello": 3}, {"skill_id": "SK018", "livello": 4}
+      {
+        "skill_id": "SK012",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK014",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK013",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK018",
+        "livello": 4
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R009", "nome": "Roberto", "cognome": "Gallo", "email": "roberto.gallo@accenture.com",
-    "data_nascita": "1986-08-14", "ruolo_id": "RU010", "costo_orario": 130.0,
+    "id": "R009",
+    "nome": "Roberto",
+    "cognome": "Gallo",
+    "email": "roberto.gallo@accenture.com",
+    "data_nascita": "1986-08-14",
+    "ruolo_id": "RU010",
+    "costo_orario": 130.0,
     "skill_ids": [
-      {"skill_id": "SK001", "livello": 5}, {"skill_id": "SK002", "livello": 5},
-      {"skill_id": "SK006", "livello": 4}, {"skill_id": "SK007", "livello": 4}
+      {
+        "skill_id": "SK001",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK002",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK006",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK007",
+        "livello": 4
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR002"]
+    "gruppo_ruolo_ids": [
+      "GR002"
+    ]
   },
   {
-    "id": "R010", "nome": "Chiara", "cognome": "Conti", "email": "chiara.conti@accenture.com",
-    "data_nascita": "1993-12-03", "ruolo_id": "RU004", "costo_orario": 50.0,
+    "id": "R010",
+    "nome": "Chiara",
+    "cognome": "Conti",
+    "email": "chiara.conti@accenture.com",
+    "data_nascita": "1993-12-03",
+    "ruolo_id": "RU004",
+    "costo_orario": 50.0,
     "skill_ids": [
-      {"skill_id": "SK011", "livello": 3}, {"skill_id": "SK017", "livello": 4},
-      {"skill_id": "SK016", "livello": 3}, {"skill_id": "SK018", "livello": 3}
+      {
+        "skill_id": "SK011",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK017",
+        "livello": 4
+      },
+      {
+        "skill_id": "SK016",
+        "livello": 3
+      },
+      {
+        "skill_id": "SK018",
+        "livello": 3
+      }
     ],
-    "lingue": ["italiano", "inglese"], "is_active": true,
+    "lingue": [
+      "italiano",
+      "inglese"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR001"]
+    "gruppo_ruolo_ids": [
+      "GR001"
+    ]
   },
   {
-    "id": "R000", "nome": "Admin", "cognome": "System", "email": "admin@accenture.com",
-    "data_nascita": "1980-01-01", "ruolo_id": "RU011", "costo_orario": 0.0,
+    "id": "R011",
+    "nome": "Giacomo",
+    "cognome": "Ferretti",
+    "email": "giacomo.ferretti@accenture.com",
+    "data_nascita": "1978-05-20",
+    "ruolo_id": "RU011",
+    "costo_orario": 200.0,
+    "skill_ids": [
+      {
+        "skill_id": "SK001",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK006",
+        "livello": 5
+      },
+      {
+        "skill_id": "SK013",
+        "livello": 4
+      }
+    ],
+    "lingue": [
+      "italiano",
+      "inglese",
+      "tedesco"
+    ],
+    "is_active": true,
+    "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
+    "gruppo_ruolo_ids": [
+      "GR004"
+    ]
+  },
+  {
+    "id": "R000",
+    "nome": "Admin",
+    "cognome": "System",
+    "email": "admin@accenture.com",
+    "data_nascita": "1980-01-01",
+    "ruolo_id": "RU012",
+    "costo_orario": 0.0,
     "skill_ids": [],
-    "lingue": ["italiano"], "is_active": true,
+    "lingue": [
+      "italiano"
+    ],
+    "is_active": true,
     "password_hash": "$2b$12$KIX8X1234567890abcdefuABCDEFGHIJKLMNOPQRSTUVWXYZ12345",
-    "gruppo_ruolo_ids": ["GR003"]
+    "gruppo_ruolo_ids": [
+      "GR003"
+    ]
   }
 ]

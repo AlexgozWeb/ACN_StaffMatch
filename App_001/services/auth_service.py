@@ -1,7 +1,7 @@
 import os
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from passlib.context import CryptContext
+import bcrypt as _bcrypt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from dotenv import load_dotenv
@@ -13,17 +13,16 @@ SECRET_KEY = os.getenv("JWT_SECRET_KEY", "fallback-secret")
 ALGORITHM  = os.getenv("JWT_ALGORITHM", "HS256")
 EXPIRE_HOURS = int(os.getenv("JWT_EXPIRE_HOURS", "8"))
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 _bearer = HTTPBearer()
 
 DEFAULT_PASSWORD = "init01"
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    return _bcrypt.hashpw(password.encode("utf-8"), _bcrypt.gensalt()).decode("utf-8")
 
 def verify_password(plain: str, hashed: str) -> bool:
     try:
-        return pwd_context.verify(plain, hashed)
+        return _bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
     except Exception:
         return False
 
@@ -62,7 +61,10 @@ def require_groups(*groups: str):
     return checker
 
 def is_manager_or_admin(current_user: dict = Depends(get_current_user)) -> dict:
-    return require_groups("Manager", "Administrator")(current_user)
+    return require_groups("Manager", "Executive", "Administrator")(current_user)
+
+def is_executive_or_admin(current_user: dict = Depends(get_current_user)) -> dict:
+    return require_groups("Executive", "Administrator")(current_user)
 
 def is_admin(current_user: dict = Depends(get_current_user)) -> dict:
     return require_groups("Administrator")(current_user)

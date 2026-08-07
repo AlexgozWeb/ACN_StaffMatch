@@ -16,5 +16,11 @@
     "nome": "Administrator",
     "descrizione": "Amministratore di sistema — accesso completo inclusa gestione RBAC",
     "ruoli_ids": []
+  },
+  {
+    "id": "GR004",
+    "nome": "Executive",
+    "descrizione": "Executive — tutte le funzioni Manager più approvazione promozione Opportunity a Progetto",
+    "ruoli_ids": ["RU010", "RU011"]
   }
 ]

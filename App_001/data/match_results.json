@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "70021fc7-2e5c-4e65-8b26-6b6a1aedb21a",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 0,
+    "risorsa_id": "R005",
+    "score": 62,
+    "motivazione": "Possiede SAP FI a livello 4, soddisfacendo il requisito minimo richiesto, e ha disponibilità al 100% rispetto al 50% richiesto. Tuttavia, la seniority Principal e la mansione Manager non sono allineate al profilo Junior Analyst richiesto dallo slot.",
+    "stato": "Confirmed"
+  },
+  {
+    "id": "584bcf9e-0481-4117-b574-95b0894aa1b2",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 0,
+    "risorsa_id": "R009",
+    "score": 62,
+    "motivazione": "SAP FI a livello 5 e disponibilità piena coprono i requisiti tecnici e di allocazione, con un buon margine. Il disallineamento significativo di seniority (Principal) e mansione (Manager Associate) rispetto al ruolo Junior Analyst penalizza il match complessivo.",
+    "stato": "Proposed"
+  },
+  {
+    "id": "2e9f0d72-4590-444d-894e-88f31a8dcea6",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 0,
+    "risorsa_id": "R011",
+    "score": 62,
+    "motivazione": "Ottimo profilo tecnico con SAP FI a livello 5 e disponibilità al 100%, ben oltre il 50% richiesto. Come per gli altri candidati, la seniority Principal e la mansione Manager rappresentano un forte disallineamento rispetto al profilo Junior Analyst target.",
+    "stato": "Proposed"
+  },
+  {
+    "id": "671991e7-6a45-4875-99b5-9e45a4e219a5",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 1,
+    "risorsa_id": "R011",
+    "score": 62,
+    "motivazione": "Giacomo Ferretti soddisfa pienamente il requisito SAP FI (livello 5) ed è disponibile al 100%, ma la seniority Principal e la mansione Manager rappresentano un over-qualification rispetto al ruolo Consultant Mid richiesto. Il profilo è tecnicamente ottimo ma sovradimensionato per lo slot.",
+    "stato": "Proposed"
+  },
+  {
+    "id": "4d493529-5653-43d3-8890-a1962c152ea6",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 1,
+    "risorsa_id": "R009",
+    "score": 60,
+    "motivazione": "Roberto Gallo ha un ottimo match sulle skill SAP FI (livello 5) e disponibilità piena al 100%, ma come Manager Associate Principal risulta significativamente sovradimensionato rispetto alla seniority Mid Consultant richiesta. Le competenze aggiuntive su SAP CO e Controlling sono un plus ma non compensano il disallineamento di ruolo.",
+    "stato": "Proposed"
+  },
+  {
+    "id": "d2541755-01dc-49cb-81d7-27c866f91bd0",
+    "opportunity_id": "OPP257419A6",
+    "slot_index": 1,
+    "risorsa_id": "R005",
+    "score": 58,
+    "motivazione": "Andrea Colombo copre il requisito SAP FI con livello 4 e disponibilità al 100%, tuttavia la seniority Principal e la mansione Manager lo rendono un profilo over-qualified per lo slot Consultant Mid. Potrebbe essere impiegato ma con un impatto economico sproporzionato rispetto alle esigenze del progetto.",
+    "stato": "Confirmed"
+  }
+]

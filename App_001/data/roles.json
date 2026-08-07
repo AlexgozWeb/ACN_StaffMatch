@@ -9,5 +9,6 @@
   {"id": "RU008", "nome": "Senior Consultant", "seniority": "Senior", "descrizione": "Consulenza senior, design di soluzione e gestione deliverable", "costo_orario": 100.0},
   {"id": "RU009", "nome": "Team Leader", "seniority": "Senior", "descrizione": "Coordinamento team tecnico/funzionale e interfaccia con il PM", "costo_orario": 110.0},
   {"id": "RU010", "nome": "Manager Associate", "seniority": "Principal", "descrizione": "Gestione workstream e supervisione team", "costo_orario": 130.0},
-  {"id": "RU011", "nome": "Manager", "seniority": "Principal", "descrizione": "Gestione progetto, relazione cliente e responsabilità P&L", "costo_orario": 160.0}
+  {"id": "RU011", "nome": "Manager", "seniority": "Principal", "descrizione": "Gestione progetto, relazione cliente e responsabilità P&L", "costo_orario": 160.0},
+  {"id": "RU012", "nome": "System Admin", "seniority": "System", "descrizione": "Amministratore di sistema — accesso tecnico completo alla piattaforma", "costo_orario": 0.0}
 ]

@@ -102,6 +102,10 @@ class SkillRichiesta(BaseModel):
     skill_id: str
     livello_minimo: int
 
+class SlotRisorsa(BaseModel):
+    mansione_id: str
+    percentuale_allocazione: int  # 10–100
+
 class Opportunity(BaseModel):
     id: str
     titolo: str
@@ -109,9 +113,7 @@ class Opportunity(BaseModel):
     referente_it_cliente: ReferenteCliente
     manager_id: str
     skill_richieste: list[SkillRichiesta]
-    seniority_minima: str
-    disponibilita_richiesta: int
-    numero_risorse: int
+    slot_risorse: list[SlotRisorsa]
     data_inizio: str
     data_fine_prevista: str
     stato: Stato
@@ -123,12 +125,32 @@ class OpportunityCreate(BaseModel):
     referente_it_cliente: ReferenteCliente
     manager_id: str
     skill_richieste: list[SkillRichiesta]
-    seniority_minima: str
-    disponibilita_richiesta: int
-    numero_risorse: int = 1
+    slot_risorse: list[SlotRisorsa]
     data_inizio: str
     data_fine_prevista: str
     descrizione: str = ""
+
+class OpportunityUpdate(BaseModel):
+    titolo: Optional[str] = None
+    cliente: Optional[str] = None
+    data_inizio: Optional[str] = None
+    data_fine_prevista: Optional[str] = None
+    descrizione: Optional[str] = None
+    skill_richieste: Optional[list[SkillRichiesta]] = None
+    slot_risorse: Optional[list[SlotRisorsa]] = None
+
+class ProgettoUpdate(BaseModel):
+    nome: Optional[str] = None
+    cliente: Optional[str] = None
+    data_fine_prevista: Optional[str] = None
+    descrizione: Optional[str] = None
+
+class AllocazioneCreate(BaseModel):
+    risorsa_id: str
+    percentuale: int
+    data_inizio: str
+    data_fine: str
+    ruolo_nel_progetto: str = "Consultant"
 
 class Allocazione(BaseModel):
     id: str

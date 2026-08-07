@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import auth, resources, projects, opportunities, matching, skills, roles, role_groups
+from routers import auth, resources, projects, opportunities, matching, skills, mansioni, role_groups, promotions, project_changes
 
 app = FastAPI(
     title="StaffMatch AI",
@@ -22,8 +22,10 @@ app.include_router(projects.router)
 app.include_router(opportunities.router)
 app.include_router(matching.router)
 app.include_router(skills.router)
-app.include_router(roles.router)
+app.include_router(mansioni.router)
 app.include_router(role_groups.router)
+app.include_router(promotions.router)
+app.include_router(project_changes.router)
 
 @app.get("/", tags=["Health"])
 def health():
