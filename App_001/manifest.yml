@@ -4,7 +4,7 @@ applications:
     instances: 1
     buildpacks:
       - python_buildpack
-    command: pip install -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port $PORT
+    command: uvicorn main:app --host 0.0.0.0 --port $PORT
     env:
       AICORE_AUTH_URL: https://accenture-genai-finance-it.authentication.eu10.hana.ondemand.com
       AICORE_BASE_URL: https://api.ai.prod.eu-central-1.aws.ml.hana.ondemand.com
@@ -15,3 +15,13 @@ applications:
       JWT_SECRET_KEY: staffmatch-secret-key-accenture-2026
       JWT_ALGORITHM: HS256
       JWT_EXPIRE_HOURS: "8"
+
+  - name: staffmatch-ai-frontend
+    memory: 512M
+    instances: 1
+    path: ./frontend
+    buildpacks:
+      - python_buildpack
+    command: streamlit run app.py --server.port $PORT --server.headless true --server.address 0.0.0.0
+    env:
+      BACKEND_URL: https://staffmatch-ai-backend.cfapps.eu10-004.hana.ondemand.com

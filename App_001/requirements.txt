@@ -3,5 +3,5 @@ uvicorn[standard]
 python-dotenv
 requests
 python-jose[cryptography]
-passlib[bcrypt]
+bcrypt
 pydantic[email]
