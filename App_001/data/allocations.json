@@ -1,0 +1,12 @@
+[
+  {"id": "A001", "risorsa_id": "R001", "progetto_id": "P001", "percentuale": 50, "data_inizio": "2025-09-01", "data_fine": "2026-06-30", "ruolo_nel_progetto": "Senior Consultant FI/CO"},
+  {"id": "A002", "risorsa_id": "R004", "progetto_id": "P001", "percentuale": 100, "data_inizio": "2025-09-01", "data_fine": "2026-06-30", "ruolo_nel_progetto": "Senior Analyst FI"},
+  {"id": "A003", "risorsa_id": "R003", "progetto_id": "P001", "percentuale": 50, "data_inizio": "2025-09-01", "data_fine": "2026-06-30", "ruolo_nel_progetto": "Developer Senior ABAP"},
+  {"id": "A004", "risorsa_id": "R002", "progetto_id": "P002", "percentuale": 100, "data_inizio": "2025-10-15", "data_fine": "2026-09-30", "ruolo_nel_progetto": "Consultant MM/SD"},
+  {"id": "A005", "risorsa_id": "R007", "progetto_id": "P002", "percentuale": 100, "data_inizio": "2025-10-15", "data_fine": "2026-09-30", "ruolo_nel_progetto": "Team Leader MM"},
+  {"id": "A006", "risorsa_id": "R006", "progetto_id": "P003", "percentuale": 100, "data_inizio": "2026-01-10", "data_fine": "2026-12-31", "ruolo_nel_progetto": "Developer Fiori"},
+  {"id": "A007", "risorsa_id": "R008", "progetto_id": "P004", "percentuale": 100, "data_inizio": "2026-02-01", "data_fine": "2026-11-30", "ruolo_nel_progetto": "Analyst BTP/AI"},
+  {"id": "A008", "risorsa_id": "R003", "progetto_id": "P004", "percentuale": 50, "data_inizio": "2026-02-01", "data_fine": "2026-11-30", "ruolo_nel_progetto": "Developer Senior BTP"},
+  {"id": "A009", "risorsa_id": "R010", "progetto_id": "P005", "percentuale": 100, "data_inizio": "2026-03-01", "data_fine": "2026-10-31", "ruolo_nel_progetto": "Developer Junior Fiori"},
+  {"id": "A010", "risorsa_id": "R001", "progetto_id": "P005", "percentuale": 50, "data_inizio": "2026-03-01", "data_fine": "2026-10-31", "ruolo_nel_progetto": "Senior Consultant"}
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "GR001",
+    "nome": "Employee",
+    "descrizione": "Dipendente standard — accesso in sola lettura",
+    "ruoli_ids": ["RU001","RU002","RU003","RU004","RU005","RU006","RU007","RU008","RU009"]
+  },
+  {
+    "id": "GR002",
+    "nome": "Manager",
+    "descrizione": "Manager — può creare risorse, progetti e lanciare il matching AI",
+    "ruoli_ids": ["RU010","RU011"]
+  },
+  {
+    "id": "GR003",
+    "nome": "Administrator",
+    "descrizione": "Amministratore di sistema — accesso completo inclusa gestione RBAC",
+    "ruoli_ids": []
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "OPP001", "titolo": "SAP S/4HANA Finance Implementation",
+    "cliente": "Energia Rinnovabile Italia Srl",
+    "referente_it_cliente": {"nome": "Davide", "cognome": "Cattaneo"},
+    "manager_id": "R005",
+    "skill_richieste": [
+      {"skill_id": "SK006", "livello_minimo": 4},
+      {"skill_id": "SK001", "livello_minimo": 4},
+      {"skill_id": "SK002", "livello_minimo": 3}
+    ],
+    "seniority_minima": "Senior",
+    "disponibilita_richiesta": 100,
+    "numero_risorse": 2,
+    "data_inizio": "2026-09-01",
+    "data_fine_prevista": "2027-06-30",
+    "stato": "New",
+    "descrizione": "Full implementation S/4HANA Finance greenfield per azienda del settore energy"
+  },
+  {
+    "id": "OPP002", "titolo": "BTP Extension Development",
+    "cliente": "Fashion Group SpA",
+    "referente_it_cliente": {"nome": "Monica", "cognome": "Sala"},
+    "manager_id": "R009",
+    "skill_richieste": [
+      {"skill_id": "SK013", "livello_minimo": 4},
+      {"skill_id": "SK012", "livello_minimo": 4},
+      {"skill_id": "SK019", "livello_minimo": 3}
+    ],
+    "seniority_minima": "Mid",
+    "disponibilita_richiesta": 100,
+    "numero_risorse": 2,
+    "data_inizio": "2026-09-15",
+    "data_fine_prevista": "2027-03-31",
+    "stato": "New",
+    "descrizione": "Sviluppo estensioni SAP BTP con side-by-side extension su S/4HANA Cloud"
+  },
+  {
+    "id": "OPP003", "titolo": "SAP MM/WM Optimization",
+    "cliente": "Logistica Express Srl",
+    "referente_it_cliente": {"nome": "Cristina", "cognome": "Vitale"},
+    "manager_id": "R005",
+    "skill_richieste": [
+      {"skill_id": "SK003", "livello_minimo": 4},
+      {"skill_id": "SK011", "livello_minimo": 3}
+    ],
+    "seniority_minima": "Mid",
+    "disponibilita_richiesta": 50,
+    "numero_risorse": 1,
+    "data_inizio": "2026-10-01",
+    "data_fine_prevista": "2027-04-30",
+    "stato": "New",
+    "descrizione": "Ottimizzazione processi magazzino e integrazione con sistemi di trasporto"
+  }
+]

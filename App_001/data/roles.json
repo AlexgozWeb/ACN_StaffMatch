@@ -1,0 +1,13 @@
+[
+  {"id": "RU001", "nome": "Junior Analyst", "seniority": "Junior", "descrizione": "Supporto all'analisi funzionale e raccolta requisiti", "costo_orario": 45.0},
+  {"id": "RU002", "nome": "Analyst", "seniority": "Mid", "descrizione": "Analisi funzionale e documentazione processi", "costo_orario": 65.0},
+  {"id": "RU003", "nome": "Senior Analyst", "seniority": "Senior", "descrizione": "Analisi funzionale senior e gestione workshop con il cliente", "costo_orario": 85.0},
+  {"id": "RU004", "nome": "Developer Junior", "seniority": "Junior", "descrizione": "Sviluppo e customizzazione base SAP/applicativa", "costo_orario": 50.0},
+  {"id": "RU005", "nome": "Developer", "seniority": "Mid", "descrizione": "Sviluppo e customizzazione SAP/applicativa", "costo_orario": 70.0},
+  {"id": "RU006", "nome": "Developer Senior", "seniority": "Senior", "descrizione": "Sviluppo senior, architettura tecnica e code review", "costo_orario": 90.0},
+  {"id": "RU007", "nome": "Consultant", "seniority": "Mid", "descrizione": "Consulenza funzionale e configurazione SAP", "costo_orario": 75.0},
+  {"id": "RU008", "nome": "Senior Consultant", "seniority": "Senior", "descrizione": "Consulenza senior, design di soluzione e gestione deliverable", "costo_orario": 100.0},
+  {"id": "RU009", "nome": "Team Leader", "seniority": "Senior", "descrizione": "Coordinamento team tecnico/funzionale e interfaccia con il PM", "costo_orario": 110.0},
+  {"id": "RU010", "nome": "Manager Associate", "seniority": "Principal", "descrizione": "Gestione workstream e supervisione team", "costo_orario": 130.0},
+  {"id": "RU011", "nome": "Manager", "seniority": "Principal", "descrizione": "Gestione progetto, relazione cliente e responsabilità P&L", "costo_orario": 160.0}
+]

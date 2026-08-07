@@ -1,0 +1,22 @@
+[
+  {"id": "SK001", "nome": "SAP FI", "categoria": "Funzionale", "descrizione": "SAP Financial Accounting"},
+  {"id": "SK002", "nome": "SAP CO", "categoria": "Funzionale", "descrizione": "SAP Controlling"},
+  {"id": "SK003", "nome": "SAP MM", "categoria": "Funzionale", "descrizione": "SAP Materials Management"},
+  {"id": "SK004", "nome": "SAP SD", "categoria": "Funzionale", "descrizione": "SAP Sales & Distribution"},
+  {"id": "SK005", "nome": "SAP HR", "categoria": "Funzionale", "descrizione": "SAP Human Resources"},
+  {"id": "SK006", "nome": "S/4HANA Finance", "categoria": "Funzionale", "descrizione": "SAP S/4HANA Finance transformation"},
+  {"id": "SK007", "nome": "Controlling", "categoria": "Funzionale", "descrizione": "Gestione e controllo di gestione"},
+  {"id": "SK008", "nome": "Treasury", "categoria": "Funzionale", "descrizione": "SAP Treasury & Risk Management"},
+  {"id": "SK009", "nome": "SAP PM", "categoria": "Funzionale", "descrizione": "SAP Plant Maintenance"},
+  {"id": "SK010", "nome": "SAP BW", "categoria": "Funzionale", "descrizione": "SAP Business Warehouse"},
+  {"id": "SK011", "nome": "ABAP", "categoria": "Tecnica", "descrizione": "SAP ABAP programming language"},
+  {"id": "SK012", "nome": "Python", "categoria": "Tecnica", "descrizione": "Python programming language"},
+  {"id": "SK013", "nome": "SAP BTP", "categoria": "Tecnica", "descrizione": "SAP Business Technology Platform"},
+  {"id": "SK014", "nome": "SAP AI Core", "categoria": "Tecnica", "descrizione": "SAP AI Core platform"},
+  {"id": "SK015", "nome": "Fiori / UI5", "categoria": "Tecnica", "descrizione": "SAP Fiori and SAPUI5 development"},
+  {"id": "SK016", "nome": "JavaScript", "categoria": "Tecnica", "descrizione": "JavaScript / TypeScript"},
+  {"id": "SK017", "nome": "Java", "categoria": "Tecnica", "descrizione": "Java programming language"},
+  {"id": "SK018", "nome": "SQL", "categoria": "Tecnica", "descrizione": "SQL and relational databases"},
+  {"id": "SK019", "nome": "SAP HANA", "categoria": "Tecnica", "descrizione": "SAP HANA in-memory database"},
+  {"id": "SK020", "nome": "Cloud Foundry", "categoria": "Tecnica", "descrizione": "SAP BTP Cloud Foundry environment"}
+]

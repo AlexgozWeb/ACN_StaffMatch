@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "TestLLM",
+      "runtimeExecutable": "C:\\CLAUDE\\ACN_StaffMatch\\TestLLM_001\\venv\\Scripts\\streamlit.exe",
+      "runtimeArgs": ["run", "C:\\CLAUDE\\ACN_StaffMatch\\TestLLM_001\\app.py", "--server.port=8501", "--server.headless=true"],
+      "port": 8501
+    },
+    {
+      "name": "StaffMatch",
+      "runtimeExecutable": "C:\\CLAUDE\\ACN_StaffMatch\\App_001\\venv\\Scripts\\uvicorn.exe",
+      "runtimeArgs": ["main:app", "--reload", "--port", "8000"],
+      "port": 8000,
+      "url": "http://localhost:8000"
+    }
+  ]
+}
